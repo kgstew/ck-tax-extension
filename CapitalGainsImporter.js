@@ -245,15 +245,8 @@ CKI.getRowCount = function(){
 
 CKI.getNextEmptyRow = function() {
 	return new Promise(function(resolve, reject) {
-		//ck never renders a row with index of 10
-		if(CKI.currentIndex == 10) {
-			CKI.currentIndex++;
-		}
 
 		element = document.getElementById('row' + CKI.currentIndex);
-
-		//ck never renders a row with index of 10, but does render form elements with index 10 ????
-		var formIndex = (CKI.currentIndex > 10) ? CKI.currentIndex - 1 : CKI.currentIndex;
 
 		if(!element) {
 			CKI.ckAddRowsBtn.click();
